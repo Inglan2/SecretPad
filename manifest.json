@@ -1,0 +1,17 @@
+{
+    "name": "SecretPad",
+    "description": "An AES encrypted notepad",
+    "short_name": "SecretPad",
+    "start_url": "/",
+    "lang": "en-AU",
+    "theme_color": "#00904F",
+    "display": "standalone",
+    "background_color": "#111111",
+    "icons": [
+        { "src": "/icons/favicon.ico", "type": "image/x-icon", "sizes": "16x16 32x32" },
+        { "src": "/icons/icon-192.png", "type": "image/png", "sizes": "192x192" },
+        { "src": "/icons/icon-512.png", "type": "image/png", "sizes": "512x512" },
+        { "src": "/icons/icon-192-maskable.png", "type": "image/png", "sizes": "192x192", "purpose": "maskable" },
+        { "src": "/icons/icon-512-maskable.png", "type": "image/png", "sizes": "512x512", "purpose": "maskable" }
+      ]
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecretPad</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icons/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script type="importmap">
+      {
+        "imports": {
+          "@material/web/": "https://esm.run/@material/web/"
+        }
+      }
+    </script>
+    <script type="module">
+        import '@material/web/all.js';
+        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
+</head>
+
+<body>
+    <md-dialog id="passwordDialog">
+        <div slot="headline">
+            Unlock
+        </div>
+        <div slot="content">
+            <md-outlined-text-field type="password" id="password" label="Password">
+            </md-outlined-text-field>
+        </div>
+        <div slot="actions">
+            <md-text-button>Reset</md-text-button>
+            <md-text-button>Unlock</md-text-button>
+        </div>
+    </md-dialog>
+    <md-dialog id="setupDialog" open>
+        <div slot="headline">
+            Setup
+        </div>
+        <div slot="content">
+            <md-outlined-text-field type="password" id="setupPassword" label="Create Password">
+            </md-outlined-text-field>
+        </div>
+        <div slot="actions">
+            <md-text-button>Start</md-text-button>
+        </div>
+    </md-dialog>
+    <script>
+        document.getElementById("passwordDialog").addEventListener("opened", function () {
+            document.getElementById("password").focus()
+        })
+
+        document.getElementById("passwordDialog").addEventListener("cancel", function (e) {
+            e.preventDefault()
+        })
+
+        document.getElementById("setupDialog").addEventListener("opened", function () {
+            document.getElementById("setupPassword").focus()
+        })
+
+        document.getElementById("setupDialog").addEventListener("cancel", function (e) {
+            e.preventDefault()
+        })
+        
+    </script>
+</body>
+
+</html>
